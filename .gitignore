@@ -1,0 +1,8 @@
+.vs
+Library
+Logs
+obj
+.vsconfig
+Assembly-CSharp.csproj
+Assembly-CSharp-Editor.csproj
+URP_PBR.sln
