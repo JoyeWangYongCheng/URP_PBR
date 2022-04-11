@@ -7,3 +7,9 @@ Assembly-CSharp.csproj
 Assembly-CSharp-Editor.csproj
 URP_PBR.sln
 Temp
+Packages/manifest.json
+Packages/manifest.json
+Packages/packages-lock.json
+ProjectSettings/ProjectVersion.txt
+ProjectSettings/QualitySettings.asset
+ProjectSettings/URPProjectSettings.asset

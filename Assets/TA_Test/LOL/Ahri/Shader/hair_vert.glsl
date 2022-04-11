@@ -14,9 +14,9 @@ in vec4 in_TANGENT0;
 in vec4 in_COLOR0;
 out vec4 vs_TEXCOORD0;
 out vec3 vs_TEXCOORD1;
-out vec4 vs_TEXCOORD2;
-out vec4 vs_TEXCOORD3;
-out vec4 vs_TEXCOORD4;
+out vec4 vs_TEXCOORD2; //worldTangent
+out vec4 vs_TEXCOORD3; //worldBinormal
+out vec4 vs_TEXCOORD4; //worldNormal
 out vec4 vs_TEXCOORD5;
 out vec4 vs_TEXCOORD6;
 vec4 u_xlat0;

@@ -22,7 +22,7 @@ Material:
   m_PrefabAsset: {fileID: 0}
   m_Name: hair_pbr_lol
   m_Shader: {fileID: 4800000, guid: 8442f89df486b2241ab17ee50db09786, type: 3}
-  m_ShaderKeywords: _ISNORMALMAP_ON
+  m_ShaderKeywords: _ISHAIRSPECULAR_ON _ISNORMALMAP_ON
   m_LightmapFlags: 4
   m_EnableInstancingVariants: 0
   m_DoubleSidedGI: 0
@@ -129,16 +129,21 @@ Material:
     - _GlossMapScale: 0
     - _Glossiness: 0
     - _GlossyReflections: 0
-    - _HairExponent: 20
+    - _HairExponent: 0
     - _HairExponent1: 80
+    - _IsHairSpecular: 1
     - _IsNormalMap: 1
-    - _MatCapZ_Offset: 1.23
+    - _IsSSS: 0
+    - _MatCapZ_Offset: 2.62
     - _Metallic: 0
     - _OcclusionStrength: 1
     - _PrimaryShift: 0
-    - _PrimarySpecularShift: 1.19
+    - _PrimarySpecularExponent: 80
+    - _PrimarySpecularShift: -0.25
     - _QueueOffset: 0
     - _ReceiveShadows: 1
+    - _SecondarySpecularExponent: 20
+    - _SecondarySpecularShift: -0.81
     - _Smoothness: 0.5
     - _SmoothnessTextureChannel: 0
     - _SpecularHighlights: 1
@@ -151,4 +156,6 @@ Material:
     - _Color: {r: 1, g: 1, b: 1, a: 1}
     - _EmissionColor: {r: 1, g: 1, b: 1, a: 1}
     - _IndirectDiffuseColor: {r: 1, g: 1, b: 1, a: 1}
+    - _PrimarySpecularColor: {r: 0.24528295, g: 0.24528295, b: 0.24528295, a: 1}
+    - _SecondarySpecularColor: {r: 0.28301886, g: 0.23629403, b: 0.25137627, a: 1}
     - _SpecColor: {r: 0.19999996, g: 0.19999996, b: 0.19999996, a: 1}

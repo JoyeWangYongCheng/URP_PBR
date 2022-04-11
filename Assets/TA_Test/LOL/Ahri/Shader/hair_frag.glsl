@@ -183,15 +183,12 @@ void main(){
     //(u_xlat16_3.xyz = ((u_xlat16_3.xyz * vec3(2.0, 2.0, 2.0)) + vec3(-1.0, -1.0, -1.0)));
     tangentMap = tangentMap*2-1;
     //(u_xlat5.xyz = (u_xlat16_3.yyy * vs_TEXCOORD3.xyz));
-    //float3 worldBinormal = tangentMap.y * worldBinormal;
     //(u_xlat3.xyw = ((vs_TEXCOORD2.xyz * u_xlat16_3.xxx) + u_xlat5.xyz));
-    //float3 TB = worldTngent * tangentMap.x + worldBinormal;
-    //(u_xlat3.xyz = ((vs_TEXCOORD4.xyz * u_xlat16_3.zzz) + u_xlat3.xyw));
-    //float3 TBN = worldNormal * tangentMap.z + tangentAndBinormal;
-    half3 worldNormal = half3(dot(tSpace0,tangentMap),dot(tSpace1,tangentMap),dot(tSpace2,tangentMap));   
+    //(u_xlat3.xyz = ((vs_TEXCOORD4.xyz * u_xlat16_3.zzz) + u_xlat3.xyw)); 
     //(u_xlat37 = dot(u_xlat3.xyz, u_xlat3.xyz));
     //(u_xlat37 = inversesqrt(u_xlat37));
     //(u_xlat3.xyz = (vec3(u_xlat37) * u_xlat3.xyz));
+    half3 worldNormal = half3(dot(tSpace0,tangentMap),dot(tSpace1,tangentMap),dot(tSpace2,tangentMap));  
     worldNormal = normalize(worldNormal);
     
     //头发数据图
@@ -200,9 +197,7 @@ void main(){
     //(u_xlat16_7.xy = (u_xlat16_5.xx + vec2(_PrimarySpecularShift, _SecondarySpecularShift)));
     float2 hairOffset = hairDataMap + float2(_PrimarySpecularShift, _SecondarySpecularShift);
     //(u_xlat16_7.xzw = ((u_xlat16_7.xxx * u_xlat4.xyz) + u_xlat3.xyz));
-    
     float3 hairTangentOffset01 = hairOffset.x * worldNormal + worldTangent;
-    
     //(u_xlat16_8.xyz = ((u_xlat16_7.yyy * u_xlat4.xyz) + u_xlat3.xyz));
     float3 hairTangentOffset02 = hairOffset.y * worldNormal + worldTangent;
     
@@ -221,8 +216,11 @@ void main(){
     (u_xlat16_7.x = (u_xlat16_7.x * u_xlat16_7.x));
     (u_xlat16_7.x = (u_xlat16_7.x * u_xlat16_31));
     (u_xlat16_7.x = (u_xlat16_19 * u_xlat16_7.x));
+    
     (u_xlat16_7.xyz = (u_xlat16_7.xxx * _PrimarySpecularColor.xyz));
-    (u_xlat16_43 = dot(u_xlat16_8.xyz, u_xlat16_8.xyz));
+    float3 primSpecuColor = 
+    //(u_xlat16_43 = dot(u_xlat16_8.xyz, u_xlat16_8.xyz));
+    float hairTangentOffset02Dot = dot(hairTangentOffset02,hairTangentOffset02);
     (u_xlat16_43 = inversesqrt(u_xlat16_43));
     (u_xlat16_8.xyz = (vec3(u_xlat16_43) * u_xlat16_8.xyz));
     (u_xlat16_43 = dot(u_xlat16_8.xyz, u_xlat1.xyz));
@@ -231,14 +229,19 @@ void main(){
     (u_xlat16_43 = clamp(u_xlat16_43, 0.0, 1.0));
     (u_xlat16_8.x = sqrt(u_xlat16_8.x));
     (u_xlat16_8.x = log2(u_xlat16_8.x));
+    
     (u_xlat16_8.x = (u_xlat16_8.x * _SecondarySpecularExponent));
     (u_xlat16_8.x = exp2(u_xlat16_8.x));
     (u_xlat16_20 = ((u_xlat16_43 * -2.0) + 3.0));
     (u_xlat16_43 = (u_xlat16_43 * u_xlat16_43));
     (u_xlat16_43 = (u_xlat16_43 * u_xlat16_20));
     (u_xlat16_43 = (u_xlat16_8.x * u_xlat16_43));
-    (u_xlat16_7.xyz = ((vec3(u_xlat16_43) * _SecondarySpecularColor.xyz) + u_xlat16_7.xyz));
-    (u_xlat16_1.xyz = ((u_xlat16_7.xyz * u_xlat16_5.yyy) + vec3(-9.9999997e-05, -9.9999997e-05, -9.9999997e-05)));
+    float secondaryOffset =  
+    
+    //(u_xlat16_7.xyz = ((vec3(u_xlat16_43) * _SecondarySpecularColor.xyz) + u_xlat16_7.xyz));
+    float3 oneAndSecondSpecularColor = secondaryOffset * _SecondarySpecularColor + primSpecuColor;
+    //(u_xlat16_1.xyz = ((u_xlat16_7.xyz * u_xlat16_5.yyy) + vec3(-9.9999997e-05, -9.9999997e-05, -9.9999997e-05)));
+    float3 hairSpecuColor = oneAndSecondSpecularColor * hairDataMap.y + -0.0001;
     (u_xlat16_1.xyz = max(u_xlat16_1.xyz, vec3(0.0, 0.0, 0.0)));
     (u_xlat16_1.xyz = min(u_xlat16_1.xyz, vec3(100.0, 100.0, 100.0)));
     
