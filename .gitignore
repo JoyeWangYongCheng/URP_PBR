@@ -13,3 +13,5 @@ Packages/packages-lock.json
 ProjectSettings/ProjectVersion.txt
 ProjectSettings/QualitySettings.asset
 ProjectSettings/URPProjectSettings.asset
+AmplifyShaderEditor.csproj
+.idea/.idea.URP_PBR/.idea/workspace.xml

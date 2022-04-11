@@ -154,8 +154,9 @@ Material:
     m_Colors:
     - _BaseColor: {r: 1, g: 1, b: 1, a: 1}
     - _Color: {r: 1, g: 1, b: 1, a: 1}
+    - _Color0: {r: 0, g: 0, b: 0, a: 0}
     - _EmissionColor: {r: 1, g: 1, b: 1, a: 1}
     - _IndirectDiffuseColor: {r: 1, g: 1, b: 1, a: 1}
-    - _PrimarySpecularColor: {r: 0.24528295, g: 0.24528295, b: 0.24528295, a: 1}
-    - _SecondarySpecularColor: {r: 0.28301886, g: 0.23629403, b: 0.25137627, a: 1}
+    - _PrimarySpecularColor: {r: 0.24528292, g: 0.24528292, b: 0.24528292, a: 1}
+    - _SecondarySpecularColor: {r: 0.28301883, g: 0.236294, b: 0.25137624, a: 1}
     - _SpecColor: {r: 0.19999996, g: 0.19999996, b: 0.19999996, a: 1}
