@@ -134,7 +134,7 @@ Material:
     - _IsHairSpecular: 1
     - _IsNormalMap: 1
     - _IsSSS: 0
-    - _MatCapZ_Offset: 2.62
+    - _MatCapZ_Offset: 1.64
     - _Metallic: 0
     - _OcclusionStrength: 1
     - _PrimaryShift: 0
@@ -154,9 +154,8 @@ Material:
     m_Colors:
     - _BaseColor: {r: 1, g: 1, b: 1, a: 1}
     - _Color: {r: 1, g: 1, b: 1, a: 1}
-    - _Color0: {r: 0, g: 0, b: 0, a: 0}
     - _EmissionColor: {r: 1, g: 1, b: 1, a: 1}
     - _IndirectDiffuseColor: {r: 1, g: 1, b: 1, a: 1}
-    - _PrimarySpecularColor: {r: 0.24528292, g: 0.24528292, b: 0.24528292, a: 1}
-    - _SecondarySpecularColor: {r: 0.28301883, g: 0.236294, b: 0.25137624, a: 1}
+    - _PrimarySpecularColor: {r: 0.37130654, g: 0.41556934, b: 0.5283019, a: 1}
+    - _SecondarySpecularColor: {r: 0.3489846, g: 0.13683696, b: 0.38679248, a: 1}
     - _SpecColor: {r: 0.19999996, g: 0.19999996, b: 0.19999996, a: 1}

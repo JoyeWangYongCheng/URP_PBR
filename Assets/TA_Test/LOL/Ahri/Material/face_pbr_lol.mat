@@ -146,7 +146,7 @@ Material:
     m_Colors:
     - _BaseColor: {r: 1, g: 1, b: 1, a: 1}
     - _Color: {r: 1, g: 1, b: 1, a: 1}
-    - _EmissionColor: {r: 3.776172, g: 0, b: 0, a: 1}
+    - _EmissionColor: {r: 1.4980392, g: 0, b: 0, a: 1}
     - _IndirectDiffuseColor: {r: 1, g: 1, b: 1, a: 1}
     - _PrimarySpecularColor: {r: 0.745283, g: 0.745283, b: 0.745283, a: 1}
     - _SecondarySpecularColor: {r: 0.33285868, g: 0.33764356, b: 0.37735847, a: 1}
